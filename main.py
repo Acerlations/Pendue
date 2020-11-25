@@ -8,11 +8,7 @@ def word_list():
                    "Nucléaire","Alligator","Assistant","Rencontrer","Hydrophobe","Ornithorynque","Schisme",
                    "Caïman","Dimanche","Kiwi","Grenouille","Enveloppe","Kamikaze","Antigel","Mensonge",
                    "Obstacle","Mouette","Chevalet", "Unique", "Spectre", "Physique", "Bonjour", "Antigel"]
-    for i in listed_word:
-        new_list = []
-        if i not in new_list:
-            new_list.append(i)
-        return new_list
+    return listed_word[randint(0, len(listed_word))]
 
 
 def removeDupes(mystring):
@@ -80,8 +76,18 @@ def guess():
     return propo
 
 
+def gamemode():
+    demande = input("Vous voulez faire deviner un mot ou avoir un mot au hasard [deviner/hasard]: ")
+    if demande == "deviner":
+        return init()
+    if demande == "hasard":
+        return word_list()
+    else:
+        afficher("Je ne comprend pas votre demannde mettez deviner pour faire trouver un mot ou mettez hasard pour avoir un mot au hasard")
+    
+
 def play():
-    word = init()
+    word = gamemode()
     nb_coups_restant = nb_coups(word)
     word = word.lower()
     hidden_word = hideword(word)
@@ -136,4 +142,3 @@ def letter_finder(word, propo):
 
 
 play()
-
