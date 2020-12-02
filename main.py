@@ -8,7 +8,7 @@ def word_list():
                    "Nucléaire","Alligator","Assistant","Rencontrer","Hydrophobe","Ornithorynque","Schisme",
                    "Caïman","Dimanche","Kiwi","Grenouille","Enveloppe","Kamikaze","Antigel","Mensonge",
                    "Obstacle","Mouette","Chevalet", "Unique", "Spectre", "Physique", "Bonjour", "Antigel"]
-    return listed_word[randint(0, len(listed_word))]
+    return listed_word[randint(0, len(listed_word)-1)]
 
 
 def removeDupes(mystring):
@@ -59,7 +59,7 @@ def verif(mystring, fonction_name):
 def init():
     word = input("Mot: ")
     if len(word) < 2:
-        afficher("Met un mot")
+        afficher("Mettez un mot")
         return init()
     verif(word, play)
     return word
