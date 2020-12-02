@@ -11,7 +11,7 @@ def word_list():
     return listed_word[randint(0, len(listed_word)-1)]
 
 
-def removeDupes(mystring):
+def removedupes(mystring):
     newstring = ""
     mystring = mystring.lower()
     for i in mystring:
@@ -27,7 +27,7 @@ def randomletter(string):
 
 
 def hideword(word):
-    word_del_dupe = removeDupes(word)
+    word_del_dupe = removedupes(word)
     randomword = randomletter(word_del_dupe)
     # print(f"Lettre random : {randomword}")
     liste = list(word)
@@ -66,7 +66,7 @@ def init():
 
 
 def nb_coups(word):
-    return len(removeDupes(word))
+    return len(removedupes(word))
 
 
 def guess():
